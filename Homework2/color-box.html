@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Box Events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        #reset {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Blue</div>
+    <button id="reset">Reset</button>
+
+    <script>
+        const box = document.getElementById("box");
+        const resetButton = document.getElementById("reset");
+        const originalColor = "blue";
+        let boxSize = 150;
+
+        function setColor(color) {
+            box.style.backgroundColor = color;
+            box.textContent = color.charAt(0).toUpperCase() + color.slice(1);
+        }
+
+        function setSize(size) {
+            box.style.width = `${size}px`;
+            box.style.height = `${size}px`;
+        }
+
+        box.addEventListener("mouseover", () => setColor("red"));
+        box.addEventListener("mouseout", () => setColor(originalColor));
+        
+        box.addEventListener("click", () => {
+            const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            box.style.backgroundColor = randomColor;
+            box.textContent = "Random";
+        });
+
+        document.addEventListener("keydown", (event) => {
+            const key = event.key.toLowerCase();
+            const colorMap = { r: "red", g: "green", b: "blue", y: "yellow" };
+            if (colorMap[key]) setColor(colorMap[key]);
+            if (key === "w") {
+                boxSize += 10;
+                setSize(boxSize);
+            }
+            if (key === "s") {
+                boxSize = Math.max(50, boxSize - 10);
+                setSize(boxSize);
+            }
+        });
+
+        resetButton.addEventListener("click", () => {
+            setColor(originalColor);
+            boxSize = 150;
+            setSize(boxSize);
+        });
+    </script>
+</body>
+</html>
