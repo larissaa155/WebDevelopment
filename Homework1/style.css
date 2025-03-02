@@ -1,0 +1,132 @@
+body{
+	background-color: #e6e6ff;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+.header{
+	background-color: #94d2f9;
+	margin-bottom: 40px;
+	padding: 20px 50px;
+	color: white;
+}
+
+#header_id{
+	display: inline;
+}
+
+.navigation{
+	display: inline;
+	float: right;
+	padding-top: 10px;
+}
+
+.navigation a{
+	margin-left: 40px;
+	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: 3px;
+	font-size: 18px;
+	color: white;
+}
+
+.navigation a:hover{
+	color: black;
+}
+
+.about_me{
+	margin: 50px 100px;
+}
+
+.about_me p{
+	font-size: 20px;
+}
+
+.about_me li{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.gallery{
+	margin: 50px 100px;
+	text-align:center;
+}
+
+.gallery h1{
+	text-align: left;
+}
+
+.gallery img{
+	margin-left: 50px;
+	width: 268px;
+	height: 200px;
+}
+
+.gallery img:hover{
+	transform: scale(1.1);
+}
+
+.achievement_part{
+	margin: 50px 100px;
+}
+
+.achievement_part table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+  border: 2px solid #dddddd;
+  text-align: center;
+  padding: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.contact{
+	margin: 50px 100px;
+}
+
+input[type=text], textarea {
+	width: 100%;
+	padding: 12px; 
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+
+input[type=submit] {
+	background-color: #94def9;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+input[type=submit]:hover {
+	color: #000000;
+}
+
+.footer_part{
+	text-align: center;
+	background-color: #94def9;
+	margin-top: 20px;
+}
+
+.footer_part p{
+	margin: 0;
+	padding: 16px 0px;
+	color: white;
+	font-style: italic;
+}
